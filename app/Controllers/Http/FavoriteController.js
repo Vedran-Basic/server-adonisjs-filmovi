@@ -1,6 +1,7 @@
 'use strict'
 
 const Favorite = use ('App/Models/Favorite')
+const AuthorizationService = use('App/Services/AuthorizationService')
 
 class FavoriteController {
   async index({ auth }) {
@@ -10,23 +11,21 @@ class FavoriteController {
 
   async create({ request, auth }) {
     const user = await auth.getUser()
-    const { imdbID } = request.all()
+    const { imdbID, Title, Poster, Year, Type  } = request.all()
     console.log(imdbID)
     const favorite = new Favorite()
     favorite.fill({
-      imdbID
+      imdbID, Title, Poster, Year, Type
     })
     await user.favorites().save(favorite)
     return request.all()
   }
 
-  async destroy({ auth, request, params }) {
+  async destroy({ auth, response, params }) {
     const user = await auth.getUser()
     const { id } = params
     const favorite = await Favorite.find(id)
-    if (favorite.user_id !== user.id) {
-      return response.status(403)
-    }
+    AuthorizationService.verifyPermission(favorite, user)
     await favorite.delete()
     return favorite
   }
