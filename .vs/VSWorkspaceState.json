@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\Controllers",
+    "\\app\\Controllers\\Http",
+    "\\app\\Models",
+    "\\database",
+    "\\database\\migrations",
+    "\\start"
+  ],
+  "SelectedNode": "\\package-lock.json",
+  "PreviewInSolutionExplorer": false
+}
