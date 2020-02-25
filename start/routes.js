@@ -2,11 +2,7 @@
 
 const Route = use('Route')
 
-Route.post('/', ({ request }) => {
-  return { greeting: 'Hello world in JSON' }
-})
-
-Route.post('auth/register', 'UserController.register')
+Route.get('/', 'UserController.register')
 
 Route.group(() => {
   
