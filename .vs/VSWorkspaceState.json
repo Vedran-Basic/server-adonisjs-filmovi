@@ -5,10 +5,10 @@
     "\\app\\Controllers",
     "\\app\\Controllers\\Http",
     "\\app\\Models",
-    "\\database",
+    "\\config",
     "\\database\\migrations",
     "\\start"
   ],
-  "SelectedNode": "\\package-lock.json",
+  "SelectedNode": "\\app\\Controllers\\Http\\UserController.js",
   "PreviewInSolutionExplorer": false
 }

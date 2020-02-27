@@ -9,3 +9,9 @@ tmp
 
 # The development sqlite file
 database/*.sqlite
+
+#Environment variables file that keeps popping up
+.env.example
+
+#Visual studio preferences
+.vs
